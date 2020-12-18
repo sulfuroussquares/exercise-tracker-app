@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 
+
 // easy connection to mongodb 
 const mongoose = require('mongoose');
 
@@ -24,6 +25,19 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true});
 const connection = mongoose.connection;
 
+
+
+// require routes
+const exercisesRouter = require('./routes/exercises');
+const usersRouter = require('./routes/users');
+
+// use routes
+app.use('/exercises', exercisesRouter);
+app.use('/users', usersRouter);
+// this means that when visitors go to the webpage, https://whatever-the-url-is/exercises
+// will load everything in the exercisesRouter
+
+
 // once the connection is open, do this
 connection.once('open', () => {
     console.log("MongoDB database connection successful.");
@@ -34,6 +48,8 @@ connection.once('open', () => {
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
 });
+
+
 
 
 
