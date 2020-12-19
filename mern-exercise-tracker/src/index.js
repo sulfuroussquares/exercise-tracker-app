@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+// Importing App.js, which is our core application
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// Render function displays the webapp and appends it to the part of the document with Id "root"
 ReactDOM.render(
   <React.StrictMode>
     <App />
@@ -11,7 +14,3 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
