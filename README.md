@@ -1,18 +1,36 @@
-# exercise-tracker-app
+#### Exercise Tracker App
 
-This app uses the MERN stack.
-MongoDB Atlas: Open Source database
-Express.js: Web Application Framework for Node.js
-React.js: Front-end library for building UI
-Node.js: JavaScript runtime environment for executing JS outside of a browser
+This project is intended to facilitate my learning and understanding of various technologies and concepts. It involves the use of:
 
-+
+ - React.js (front-end)
+ - MongoDB (nosql database)
+ - MongoDB Atlas (cloud-based centralized management for MongoDB data)
+ - Mongoose (simplifies interacting with mongodb)
+ - Node.js (run JavaScript outside of a browser/package management/back-end services)
+ - Express.js (Web Application Framework)
+ - Bootstrap CSS library
+ - React Router
 
-Mongoose: Schema-based solution to model application data
+Credit goes to FreeCodeCamp as I coded along their tutorial. Comments have been added throughout the code to explain functionality, and the general process is broken down in this readme.
 
 ---
-MongoDB uses unique terminology and operates differently from a standard SQL-ish relational database.
-- Documents are stored as BSON (Binary JSON)
-- Fields are commonly nested (i.e. an "Address attribute may have sub-components). Data that belongs together is stored together.
-- Similarly, arrays may be stored within documents
+### Database
+The db schema is created using Mongoose.
+There are two entities: *exercises* and *users*.
+
+
+--- 
+### Testing
+We use *Insomnia* to test the server API. This functions similarly to *postman*.
+
+---
+### React
+We use components (React.Component) to tell React what we want to render.
+Components take in "props", and return a hierarchy of views to display using ender methods.
+React utilizes JSX, which looks like HTML but can use JavaScript in {curly braces}.
+
+---
+### Connecting the front-end to the back-end
+The front-end sends HTTPS requests to the back end. This is done via the *Axios* library.
+
 
