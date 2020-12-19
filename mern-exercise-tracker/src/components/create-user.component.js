@@ -52,7 +52,6 @@ export default class CreateUser extends Component {
 
 
 
-
     // NOTE: Leaving a "value={}" in the input box attributes makes a read-only input box!
     // use "defaultValue=" instead
     render() {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import axios from 'axios';
+
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -37,10 +39,17 @@ export default class CreateExercise extends Component {
 
     // react lifecycle method
     // this will be called just before anything is displayed on the page
+
+    // user is automatically set to first user in database if there is at least 1 user
     componentDidMount() {
-        this.setState({
-            users: ['test'],
-            username: 'test user'
+        axios.get('http://localhost:5000/users/')
+        .then(res => {
+            if (res.data.length > 0){
+                this.setState({
+                    users: res.data.map(user => user.username),
+                    username: res.data[0].username
+                })
+            }
         })
     } // end componentDidMount()
 
@@ -84,6 +93,11 @@ export default class CreateExercise extends Component {
           };
 
         console.log(exercise);
+
+        // send data to backend
+        // see /backend/routes/exercises to see what happens when we send a POST request to /users/add
+        axios.post('http://localhost:5000/exercises/add', exercise)
+          .then(res => console.log(res.data));
 
         // take the user back to homepage (list of exercises)
         window.location='/';
