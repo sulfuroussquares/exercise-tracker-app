@@ -117,7 +117,7 @@ export default class CreateExercise extends Component {
                 <select ref="userInput"
                     required
                     className="form-control"
-                    value={this.state.username}
+                    defaultValue={this.state.username}
                     onChange={this.onChangeUsername}>
                     {
                         // take all of our users and return them in an array
